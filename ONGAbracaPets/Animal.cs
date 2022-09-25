@@ -50,13 +50,16 @@ namespace ONGAbracaPets
             //Cadastra o Sexo do Animal
             do
             {
-                Console.Write("Digite o Sexo do Animal: ");
-                Sexo = db.TratamentoDado(Console.ReadLine().ToUpper());
+                Console.Write("Digite o sexo do Animal [M] Masculino / [F] Feminino: ");
+                Sexo = db.TratamentoDado(Console.ReadLine()).ToUpper();
                 if (Sexo == "0")
                     return;
-                if (Raca.Length == 0)
-                    Console.WriteLine("Campo Obrigatório!!");
-            } while (Sexo.Length == 0);
+                if (Sexo != "M" && Sexo != "N" && Sexo != "F")
+                {
+                    Console.WriteLine("Digite um opção válida!!!");
+                    Thread.Sleep(2000);
+                }
+            } while (Sexo != "M" && Sexo != "N" && Sexo != "F");
 
             //Cadastra o Nome do Animal
             Console.Write("Digite o Nome do Animal (Opicional): ");
@@ -122,13 +125,16 @@ namespace ONGAbracaPets
             //Altera o Sexo do Animal
             do
             {
-                Console.Write("Digite o Sexo do Animal: ");
-                Sexo = db.TratamentoDado(Console.ReadLine().ToUpper());
+                Console.Write("Digite o sexo do Animal [M] Masculino / [F] Feminino: ");
+                Sexo = db.TratamentoDado(Console.ReadLine()).ToUpper();
                 if (Sexo == "0")
                     return;
-                if (Raca.Length == 0)
-                    Console.WriteLine("Campo Obrigatório!!");
-            } while (Sexo.Length == 0);
+                if (Sexo != "M" && Sexo != "N" && Sexo != "F")
+                {
+                    Console.WriteLine("Digite um opção válida!!!");
+                    Thread.Sleep(2000);
+                }
+            } while (Sexo != "M" && Sexo != "N" && Sexo != "F");
 
             //Altera o Nome do Animal
             Console.Write("Digite o Nome do Animal (Opicional): ");

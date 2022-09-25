@@ -32,7 +32,7 @@ namespace ONGAbracaPets
                 verifica = db.VerifCpfExistente(cpf, "CPF", "Adotante");
                 if (!verifica)
                 {
-                    Console.WriteLine("CPF não cadastrado!!!");
+                    Console.WriteLine("CPF não cadastrado / Inválido!!!");
                     Thread.Sleep(2000);
                 }
             }while(!verifica);
@@ -43,7 +43,11 @@ namespace ONGAbracaPets
             do
             {
                 Console.Write("Digite o Número do Chip do Animal: ");
-                while (!int.TryParse(Console.ReadLine(), out numChip));
+                while (!int.TryParse(Console.ReadLine(), out numChip))
+                {
+                    Console.WriteLine("Chip Inválido!!\n");
+                    Console.Write("Digite o Número do Chip do Animal: ");
+                }
                     if (numChip == 0)
                     return;
 
