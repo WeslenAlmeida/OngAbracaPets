@@ -66,30 +66,43 @@ namespace ONGAbracaPets
                 Nome = db.TratamentoDado(Console.ReadLine());
                 if (Nome == "0")
                     return;
+                if (Nome.Length == 0)
+                {
+                    Console.WriteLine("Campo Obrigatório!!!!");
+                    Thread.Sleep(2000);
+                }
                 if (Nome.Length > 50)
                 {
                     Console.WriteLine("Infome um nome menor que 50 caracteres!!!!");
                     Thread.Sleep(2000);
                 }
-            } while (Nome.Length > 50);
+            } while (Nome.Length > 50 || Nome.Length == 0);
 
             //Cadastra a data de Nascimento
-            Console.Write("Digite sua data de nascimento (Mês/Dia/Ano): ");
-            DateTime dataNasc;
-            while (!DateTime.TryParse(Console.ReadLine(), out dataNasc))
+            string data;
+            do
             {
-                if (DataNasc.Contains("0"))
-                    return;
-                Console.WriteLine("Formato de data incorreto!");
                 Console.Write("Digite sua data de nascimento (Mês/Dia/Ano): ");
-            }
-            DataNasc = db.TratamentoDado(dataNasc.ToString("dd/MM/yyyy"));
+                data = db.TratamentoDado(Console.ReadLine());
+                if (data == "0")
+                    return;
+                if(data == "")
+                    Console.WriteLine("Campo Obrigatório!!!");
+                DateTime dataNasc;
+                while (!DateTime.TryParse(data, out dataNasc))
+                {
+                    Console.WriteLine("Formato de data incorreto!");
+                    break;
+                }
+                DataNasc = db.TratamentoDado(dataNasc.ToString("dd/MM/yyyy"));
+            } while (data == "");
+           
 
             //Cadastra o Sexo
             do
             {
                 Console.Write("Digite seu sexo [M] Masculino / [F] Feminino / [N] Prefere não informar: ");
-                Sexo = db.TratamentoDado(Console.ReadLine());
+                Sexo = db.TratamentoDado(Console.ReadLine()).ToUpper();
                 if (Sexo == "0")
                     return;
                 if (Sexo != "M" && Sexo != "N" && Sexo != "F")
@@ -124,7 +137,7 @@ namespace ONGAbracaPets
             //Cadastra o Complemento
             do
             {
-                Console.Write("Digite o complemento: ");
+                Console.Write("Digite o complemento([N] Caso não Possua): ");
                 Complemento = db.TratamentoDado(Console.ReadLine());
                 if (Complemento.Length == 0)
                     Console.WriteLine("Campo Obrigatório!");
@@ -222,18 +235,23 @@ namespace ONGAbracaPets
                 Nome = db.TratamentoDado(Console.ReadLine());
                 if (Nome == "0")
                     return;
+                if (Nome.Length == 0)
+                {
+                    Console.WriteLine("Campo Obrigatório!!!!");
+                    Thread.Sleep(2000);
+                }
                 if (Nome.Length > 50)
                 {
                     Console.WriteLine("Infome um nome menor que 50 caracteres!!!!");
                     Thread.Sleep(2000);
                 }
-            } while (Nome.Length > 50);
+            } while (Nome.Length > 50 || Nome.Length == 0);
 
             //Altera o Sexo
             do
             {
                 Console.Write("Digite seu sexo [M] Masculino / [F] Feminino / [N] Prefere não informar: ");
-                Sexo = db.TratamentoDado(Console.ReadLine());
+                Sexo = db.TratamentoDado(Console.ReadLine()).ToUpper();
                 if (Sexo == "0")
                     return;
                 if (Sexo != "M" && Sexo != "N" && Sexo != "F")
@@ -268,7 +286,7 @@ namespace ONGAbracaPets
             //Altera o Complemento
             do
             {
-                Console.Write("Digite o complemento: ");
+                Console.Write("Digite o complemento([N] Caso não Possua): ");
                 Complemento = db.TratamentoDado(Console.ReadLine());
                 if (Complemento.Length == 0)
                     Console.WriteLine("Campo Obrigatório!");
