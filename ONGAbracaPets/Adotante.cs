@@ -24,7 +24,6 @@ namespace ONGAbracaPets
 
         public Adotante()
         {
-           
 
         }
 

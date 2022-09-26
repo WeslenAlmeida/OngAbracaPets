@@ -13,7 +13,7 @@ namespace ONGAbracaPets
     internal class ControlDB
     {
         //String de Conexão com o Banco de Dados
-        private static string Conexao = "Data Source=localhost; Initial Catalog=Database; User Id=sa; Password=pass;";
+        private static string Conexao = "Data Source=localhost; Initial Catalog=DbOng; User Id=sa; Password=12028716;";
 
         //Construtor Para Iniciar A Conexão
         private static SqlConnection Connection = new SqlConnection(Conexao);
