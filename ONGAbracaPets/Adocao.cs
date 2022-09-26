@@ -79,6 +79,8 @@ namespace ONGAbracaPets
             do
             {
                 confirma = Console.ReadLine().ToUpper();
+                if (confirma == "N")
+                    return;
                 if(confirma != "S" && confirma != "N")
                 {
                     Console.WriteLine("Dado Inválido!!!!");

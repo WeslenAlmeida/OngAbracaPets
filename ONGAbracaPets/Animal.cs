@@ -16,7 +16,6 @@ namespace ONGAbracaPets
 
         public Animal()
         {
-            
 
         }
         public void CadastraAnimal()
@@ -50,7 +49,7 @@ namespace ONGAbracaPets
             //Cadastra o Sexo do Animal
             do
             {
-                Console.Write("Digite o sexo do Animal [M] Masculino / [F] Feminino: ");
+                Console.Write("Digite o sexo do Animal [M] Macho / [F] Fêmea: ");
                 Sexo = db.TratamentoDado(Console.ReadLine()).ToUpper();
                 if (Sexo == "0")
                     return;
@@ -125,7 +124,7 @@ namespace ONGAbracaPets
             //Altera o Sexo do Animal
             do
             {
-                Console.Write("Digite o sexo do Animal [M] Masculino / [F] Feminino: ");
+                Console.Write("Digite o sexo do Animal [M] Macho / [F] Fêmea: ");
                 Sexo = db.TratamentoDado(Console.ReadLine()).ToUpper();
                 if (Sexo == "0")
                     return;

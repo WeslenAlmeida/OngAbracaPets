@@ -13,7 +13,7 @@ namespace ONGAbracaPets
     internal class ControlDB
     {
         //String de Conexão com o Banco de Dados
-        private static string Conexao = "Data Source=localhost; Initial Catalog=DbOng; User Id=sa; Password=pass;";
+        private static string Conexao = "Data Source=localhost; Initial Catalog=Database; User Id=sa; Password=pass;";
 
         //Construtor Para Iniciar A Conexão
         private static SqlConnection Connection = new SqlConnection(Conexao);
@@ -22,7 +22,7 @@ namespace ONGAbracaPets
 
         }
 
-        //Método para Executar os Comados de INSERT e UPDATE no BAnco de Dados
+        //Método para Executar os Comados de INSERT e UPDATE no Banco de Dados
         public void SqlExecute(string query, string table, string db)
         {
             string queryString = query;
